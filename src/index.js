@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Switch, Route } from 'react-router';
+import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './App';
+import MainContent from './components/MainContent'
+import About from './containers/about/'
 import 'bootstrap/dist/css/bootstrap.css';
 import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
@@ -24,9 +28,18 @@ const enhancer = composeEnhancers(
 const store = createStore(productsReducer,enhancer)
 // ), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 ReactDOM.render(
- <Provider store={store}>
-  <App />
-  </Provider>
+  <Provider store={store}>
+
+  <BrowserRouter>
+  <App>
+      <Switch>
+        <Route path="/About" exact component={About} />
+        <Route path="/youtube" component={MainContent} />
+      </Switch>
+    </App>
+    </BrowserRouter>
+
+      </Provider>
   , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

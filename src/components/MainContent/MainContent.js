@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import  from './MainContent.scss';
-import { Button, Card } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { bindActionCreators } from 'redux';
 import {fetchProducts} from '../../actions'
 import {getProductsError, getProducts,  getProductsPending} from '../../reducers';
+import Button from '@material-ui/core/Button';
+
 class MainContent extends Component {
 
   constructor(props){
@@ -41,12 +43,23 @@ const {products} = this.props;
   console.log("-------------------> renderrrr")
     return (
       <div>
-    {products && products.length > 0 && products.map(item =>  <Card>
-        <Card.Body>
-          <Card.Title>{item.title}</Card.Title>
-          <Button variant="primary" onClick={() => alert(item.id)}>Go somewhere</Button>
-        </Card.Body>
-      </Card>)}
+      <Row>
+      <Col lg={8}>
+      <Button variant="contained" color="primary">
+            Hello World
+        </Button>
+      </Col>
+      <Col lg={4}>
+      {products && products.length > 0 && products.map(item =>  <Card>
+          <Card.Body>
+            <Card.Title>{item.title}</Card.Title>
+
+          </Card.Body>
+        </Card>)}
+      </Col>
+
+
+      </Row>
       </div>
     );
   }
