@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import MainContent from './components/MainContent'
 import About from './containers/about/'
+import Posts from './containers/Posts/'
 import 'bootstrap/dist/css/bootstrap.css';
 import { applyMiddleware, createStore, compose } from 'redux';
 import thunk from 'redux-thunk';
@@ -32,11 +33,13 @@ ReactDOM.render(
 
   <BrowserRouter>
   <App>
-      <Switch>
-        <Route path="/About" exact component={About} />
-        <Route path="/youtube" component={MainContent} />
-      </Switch>
-    </App>
+    <Switch>
+    <Route path="/" exact component={About} />
+    <Route path="/posts" exact component={Posts} />
+    <Route path="/About" exact component={About} />
+    <Route path="/youtube" component={MainContent} />
+    </Switch>
+  </App>
     </BrowserRouter>
 
       </Provider>

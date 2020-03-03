@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import s from './about.scss';
+// import s from './about.scss';
 
 export default class About extends React.Component {
   constructor(props){

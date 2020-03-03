@@ -24,39 +24,39 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 const drawerWidth = 350;
 // import AddTodo from '../containers/AddTodo'
 function App(props) {
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const [mobileOpen, setMobileOpen] = React.useState(false);
+  //
+  // const handleDrawerToggle = () => {
+  //   setMobileOpen(!mobileOpen);
+  // };
 
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const drawer = (
-    <div>
-      <div />
-      <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  );
+  // const drawer = (
+  //   <div>
+  //     <div />
+  //     <Divider />
+  //     <List>
+  //       {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+  //         <ListItem button key={text}>
+  //           <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+  //           <ListItemText primary={text} />
+  //         </ListItem>
+  //       ))}
+  //     </List>
+  //     <Divider />
+  //     <List>
+  //       {['All mail', 'Trash', 'Spam'].map((text, index) => (
+  //         <ListItem button key={text}>
+  //           <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+  //           <ListItemText primary={text} />
+  //         </ListItem>
+  //       ))}
+  //     </List>
+  //   </div>
+  // );
   console.log(props)
   return (
     <div className="App">
-    <AppBar position="fixed">
+    {/*<AppBar position="fixed">
        <Toolbar>
          <IconButton
            color="inherit"
@@ -71,38 +71,8 @@ function App(props) {
            Responsive drawer
          </Typography>
        </Toolbar>
-     </AppBar>
-     <nav aria-label="mailbox folders">
-       {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+     </AppBar> */}
 
-         <Drawer
-
-           variant="temporary"
-           anchor={'left'}
-           open={mobileOpen}
-           onClose={handleDrawerToggle}
-           classes={{
-             // paper: classes.drawerPaper,
-           }}
-           ModalProps={{
-             keepMounted: true, // Better open performance on mobile.
-           }}
-         >
-           {drawer}
-         </Drawer>
-
-       <Hidden xsDown implementation="css">
-         <Drawer
-           classes={{
-             // paper: classes.drawerPaper,
-           }}
-           variant="permanent"
-           open
-         >
-           {drawer}
-         </Drawer>
-       </Hidden>
-     </nav>
 <Header />
 
       <Sidebar />

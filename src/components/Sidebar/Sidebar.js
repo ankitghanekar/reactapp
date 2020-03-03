@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import s from './Sidebar.scss';
+// import s from './Sidebar.scss';
 
 export default class Sidebar extends Component {
 
@@ -9,7 +9,7 @@ export default class Sidebar extends Component {
 
     return (
       <div>
-      
+
       </div>
     );
   }

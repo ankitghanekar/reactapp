@@ -1,8 +1,9 @@
-import {FETCH_PRODUCTS_PENDING, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR} from '../actions/index';
+import {FETCH_PRODUCTS_PENDING, FETCH_PRODUCTS_SUCCESS,SINGLE_POST, FETCH_PRODUCTS_ERROR} from '../actions/index';
 
 const initialState = {
     pending: false,
     products: [],
+    singlepost:{},
     error: null
 }
 
@@ -19,6 +20,8 @@ export function productsReducer(state = initialState, action) {
                 pending: false,
                 products: action.payload
             }
+        case SINGLE_POST:
+        return {...state, singlepost:action.payload}
         case FETCH_PRODUCTS_ERROR:
             return {
                 ...state,
