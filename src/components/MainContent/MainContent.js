@@ -6,12 +6,19 @@ import { bindActionCreators } from 'redux';
 import {fetchProducts} from '../../actions'
 import {getProductsError, getProducts,  getProductsPending} from '../../reducers';
 import Button from '@material-ui/core/Button';
+import YTSearch from 'youtube-api-search';
+const API_KEY = 'AIzaSyBTV6q6uN8_64C0TocFfjdBRXHu12XcG6U';
+
+
 
 class MainContent extends Component {
 
   constructor(props){
     super(props)
     console.log("sabka baap  :D")
+    this.state={
+      videos:[]
+    }
   }
   componentWillMount(){
       console.log("componentWillMount")
@@ -20,6 +27,12 @@ class MainContent extends Component {
     const {fetchProducts} = this.props;
         fetchProducts();
       console.log("componentDidMount")
+    this.videoSearch()
+  }
+  videoSearch = () => {
+    YTSearch({key:API_KEY, term:'react', 20}, (data) => {
+this.setState({videos:data})
+    })
   }
   componentWillUpdate(prevState, nextState){
       console.log("componentWillUpdate", nextState)
